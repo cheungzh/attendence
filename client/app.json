@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/attendence-list/attendence",
+    "pages/index/index",
+    "pages/personal-center/personal-center",
+    "pages/attendence-detail/detail",
+    "pages/attendence-add/add"
+  ],
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#409EFF",
+    "list": [
+      {
+        "pagePath": "pages/attendence-list/attendence",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_active.png"
+      },
+      {
+        "pagePath": "pages/attendence-add/add",
+        "text": "新增",
+        "iconPath": "images/new.png",
+        "selectedIconPath": "images/new_active.png"
+      },
+      {
+        "pagePath": "pages/personal-center/personal-center",
+        "text": "个人中心",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user_active.png"
+      }
+    ]
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#eee",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "考勤",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": true
+  }
+}

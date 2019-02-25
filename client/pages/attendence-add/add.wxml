@@ -1,0 +1,27 @@
+<view class="attendence-add">
+  <form>
+    <form-item label="类型：">
+      <picker
+          style="width: 100%"
+          value="1" bindchange="getType"
+          range="{{attendence_types}}"
+          range-key="name"
+        >{{types[attendence_form.type]}}</picker>
+    </form-item>
+    <form-item label="开始时间：">
+      <picker 
+        mode="date"
+        bindchange="getStart"
+      >{{attendence_form.start_time || '选择开始时间'}}</picker>
+    </form-item>
+    <form-item label="结束时间：">
+      <picker mode="date" bindchange="getEnd">{{attendence_form.end_time || '选择结束时间'}}</picker>
+    </form-item>
+    <form-item label="时长：">
+      <input type="number" value="{{attendence_form.day}}" placeholder='请输入时长' bindconfirm="getDay"></input>
+    </form-item>
+  </form>
+  <view style='margin-top: 10px;'>
+    <button type="primary" size="mini" style='width: 100%;padding: 5px 0;'>提交</button>
+  </view>
+</view>

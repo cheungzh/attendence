@@ -1,0 +1,11 @@
+.form-item {
+  font-size: 14px;
+  display: flex;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+.form-item .form-item__content {
+  font-size: 14px;
+  color: #323233;
+  flex: 1;
+}

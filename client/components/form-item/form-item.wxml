@@ -1,0 +1,6 @@
+<view class='form-item'>
+  <label class='form-item__label' style="width: {{labelWidth}};text-align: {{labelPosition}}">{{label}}</label>
+  <view class='form-item__content'>
+    <slot></slot>
+  </view>
+</view>
