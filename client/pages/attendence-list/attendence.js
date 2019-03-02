@@ -41,7 +41,6 @@ Page({
       name: 'getLists',
       data: this.data.query
     }).then((res) => {
-      console.log(res)
       this.setData({
         attendence_list: res.result.data
       })

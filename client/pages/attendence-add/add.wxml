@@ -16,7 +16,7 @@
       <date-picker placeholder="请选择结束时间" bind:pick="getEnd"></date-picker>
     </form-item>
     <form-item label="天数：">
-      <input type="digit" value="{{attendence_form.day}}" placeholder='请输入时长' bindconfirm="getDay" style="padding: 8px 0;"></input>
+      <input type="digit" value="{{attendence_form.day}}" placeholder='请输入时长' bindinput="getDay" style="padding: 8px 0;"></input>
     </form-item>
   </form>
   <view style='margin-top: 10px;'>

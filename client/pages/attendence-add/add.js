@@ -38,6 +38,7 @@ Page({
     })
   },
   submit () {
+    console.log(this.data.attendence_form)
     wx.cloud.callFunction({
       name: 'add',
       data: this.data.attendence_form
