@@ -1,0 +1,15 @@
+.picker {
+  position: relative;
+  padding: 8px 0;
+  font-size: 14px;
+  /* text-align: center; */
+}
+.picker-holder {
+  font-size: 14px;
+  color: #969799;
+}
+.picker .picker-icon {
+  position: absolute;
+  right: 10px;
+  transform: scale(1.2)
+}

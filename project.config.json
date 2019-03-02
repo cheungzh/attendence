@@ -6,11 +6,13 @@
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"autoAudits": false,
+		"uglifyFileName": true
 	},
 	"appid": "wx5104040a0e5808bd",
 	"projectname": "attendance",
-	"libVersion": "2.6.0",
+	"libVersion": "2.6.1",
 	"condition": {
 		"search": {
 			"current": -1,

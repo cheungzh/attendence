@@ -1,2 +1,19 @@
-<!--pages/attendence-detail/detail.wxml-->
-<text>pages/attendence-detail/detail.wxml</text>
+<view class='attendence-detail'>
+  <view class='detail-item'>
+    <label class='detail-item__label'>类型：</label>
+    <text class='detail-iten__text'>{{types[detail.type]}}</text>
+  </view>
+  <view class='detail-item'>
+    <label class='detail-item__label'>开始时间：</label>
+    <text class='detail-iten__text'>{{detail.start_time}}</text>
+  </view>
+  <view class='detail-item'>
+    <label class='detail-item__label'>结束时间：</label>
+    <text class='detail-iten__text'>{{detail.end_time}}</text>
+  </view>
+  <view class='detail-item'>
+    <label class='detail-item__label'>天数：</label>
+    <text class='detail-iten__text'>{{detail.day}}</text>
+  </view>
+  <!-- <button type="primary" size='mini' bindtap='back' class='back-btn'>返回</button> -->
+</view>

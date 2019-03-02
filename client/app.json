@@ -1,7 +1,7 @@
 {
+  "cloud": true,
   "pages": [
     "pages/attendence-list/attendence",
-    "pages/index/index",
     "pages/personal-center/personal-center",
     "pages/attendence-detail/detail",
     "pages/attendence-add/add"

@@ -1,8 +1,11 @@
 .form-item {
   font-size: 14px;
   display: flex;
-  padding: 10px 0;
   border-bottom: 1px solid #ddd;
+}
+.form-item .form-item__label {
+  display: flex;
+  align-items: center;
 }
 .form-item .form-item__content {
   font-size: 14px;

@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "form-item": "../../components/form-item/form-item"
+    "form-item": "../../components/form-item/form-item",
+    "date-picker": "../../components/date-picker/date-picker"
   }
 }

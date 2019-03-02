@@ -1,0 +1,8 @@
+<picker
+  mode='{{mode}}'
+  class='picker'
+  bindchange='pick'>
+  <text class='picker-holder' wx-if='{{!val}}'>{{placeholder}}</text>
+    {{val}}
+  <text class='picker-icon'>></text>
+</picker>

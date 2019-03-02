@@ -13,92 +13,47 @@ Page({
       { name: '请假', value: 3 }
     ],
     query: {
-      type: -1,
+      type: '',
       date: ''
     },
-    attendence_list: [
-      { id: 1, start_time: '2018-09-11', end_time: '2018-09-12', type: 1, day: 1 },
-      { id: 1, start_time: '2018-09-11', end_time: '2018-09-12', type: 3, day: 0.5 },
-      { id: 1, start_time: '2018-09-11', end_time: '2018-09-12', type: 3, day: 0.5 },
-      { id: 1, start_time: '2018-09-11', end_time: '2018-09-12', type: 3, day: 0.5 },
-      { id: 1, start_time: '2018-09-11', end_time: '2018-09-12', type: 3, day: 0.5 },
-      { id: 1, start_time: '2018-09-11', end_time: '2018-09-12', type: 3, day: 0.5 },
-      { id: 1, start_time: '2018-09-11', end_time: '2018-09-12', type: 3, day: 0.5 },
-      { id: 1, start_time: '2018-09-11', end_time: '2018-09-12', type: 3, day: 0.5 },
-      { id: 1, start_time: '2018-09-11', end_time: '2018-09-12', type: 3, day: 0.5 },
-      { id: 1, start_time: '2018-09-11', end_time: '2018-09-12', type: 3, day: 0.5 },
-      { id: 1, start_time: '2018-09-11', end_time: '2018-09-12', type: 3, day: 0.5 },
-      { id: 1, start_time: '2018-09-11', end_time: '2018-09-12', type: 3, day: 0.5 },
-      { id: 1, start_time: '2018-09-11', end_time: '2018-09-12', type: 3, day: 0.5 },
-    ]
+    attendence_list: []
   },
   changeType ({ detail }) {
     this.setData({
-      'query.type': detail.value
+      'query.type': parseInt(detail.value)
     })
+    this.getList()
   },
   getDate ({ detail }) {
     this.setData({
       'query.date': detail.value
     })
+    this.getList()
   },
   viewDetail ({ currentTarget }) {
     let { list } = currentTarget.dataset
-    console.log(list)
+    wx.navigateTo({
+      url: `/pages/attendence-detail/detail?id=${list._id}`
+    })
+  },
+  getList () {
+    wx.cloud.callFunction({
+      name: 'getLists',
+      data: this.data.query
+    }).then((res) => {
+      console.log(res)
+      this.setData({
+        attendence_list: res.result.data
+      })
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    
+  onShow: function (options) {
+    this.getList()
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onPullDownRefresh () {
+    this.getList()
   }
 })
