@@ -1,1 +1,18 @@
-<date-picker></date-picker>
+<view class='personal-center'>
+  <view class='item'>
+    <label class='item__label'>加班天数：</label>
+    <text class='item__text'>{{personal.overtime}}</text>
+  </view>
+  <view class='item'>
+    <label class='item__label'>调休天数：</label>
+    <text class='item__text'>{{personal.leave_in_lieu}}</text>
+  </view>
+  <view class='item'>
+    <label class='item__label'>请假天数：</label>
+    <text class='item__text'>{{personal.leave}}</text>
+  </view>
+  <view class='item'>
+    <label class='item__label'>剩余可调天数：</label>
+    <text class='item__text'>{{personal.overage}}</text>
+  </view>
+</view>

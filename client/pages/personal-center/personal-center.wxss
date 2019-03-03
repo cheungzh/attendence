@@ -1,1 +1,16 @@
-/* src/pages/personal-center/personal-center.wxss */
+.personal-center {
+  padding: 8px 10px;
+}
+.item {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #606266;
+}
+.item .item__label {
+  display: inline-block;
+  min-width: 80px;
+  font-weight: 500;
+}
+.item .item__text {
+  margin-left: 8px;
+}

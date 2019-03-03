@@ -13,7 +13,6 @@ Page({
       }
     }).then(res => {
       let { result } = res
-      console.log(res)
       this.setData({
         detail: result.data
       })

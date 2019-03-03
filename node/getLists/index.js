@@ -21,11 +21,13 @@ let db = cloud.database()
 exports.main = async (event, ctx) => {
   let { type, date } = event
   const _ = db.command
-  let where = {}
-  // let where = {
-  //   start_time: _.gte(formatterDate(date)).and(_.lte(formatterDate(date)))
-  // }
+  let where = {
+    start_time: _.gt(date)
+  }
   if (type) where.type = type
-  let response = await db.collection('attendence_list').where(where).get()
-  return response
+  let { data } = await db.collection('attendence_list').where(where).orderBy('start_time', 'desc').get()
+  return {
+    errno: 0,
+    data
+  }
 }

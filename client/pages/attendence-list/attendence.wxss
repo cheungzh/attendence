@@ -28,3 +28,10 @@
 .list-item .list-item__text {
   margin-left: 8px;
 }
+.no-data {
+  margin-top: 200px;
+  text-align: center
+}
+.no-data image {
+  transform: scale(2)
+}

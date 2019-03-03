@@ -35,7 +35,7 @@ Page({
   },
   getDay ({ detail }) {
     this.setData({
-      'attendence_form.day': detail.value
+      'attendence_form.day': parseFloat(detail.value)
     })
   },
   getTime (date) {

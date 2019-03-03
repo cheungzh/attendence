@@ -40,16 +40,13 @@ Page({
     wx.cloud.callFunction({
       name: 'getLists',
       data: this.data.query
-    }).then((res) => {
+    }).then(({ result }) => {
       this.setData({
-        attendence_list: res.result.data
+        attendence_list: result.data
       })
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onShow: function (options) {
+  onShow (options) {
     this.getList()
   },
   onPullDownRefresh () {
