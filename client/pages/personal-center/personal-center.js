@@ -5,7 +5,8 @@ Page({
       leave_in_lieu: 0,
       leave: 0,
       overage: 0
-    }
+    },
+    userInfo: {}
   },
   getPersonDetail () {
     wx.cloud.callFunction({
@@ -16,7 +17,25 @@ Page({
       })
     })
   },
+  getUserInfo ({ detail }) {
+    this.setData({
+      userInfo: detail.userInfo
+    })
+    console.log(detail)
+  },
   onShow () {
-    this.getPersonDetail()
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
+            success: res => {
+              this.setData({
+                userInfo: res.userInfo
+              })
+            }
+          })
+        }
+      }
+    })
   }
 })

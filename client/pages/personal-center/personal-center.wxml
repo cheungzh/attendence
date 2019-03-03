@@ -1,18 +1,29 @@
 <view class='personal-center'>
-  <view class='item'>
-    <label class='item__label'>加班天数：</label>
-    <text class='item__text'>{{personal.overtime}}</text>
+  <view class="userinfo">
+    <block wx:if="{{!userInfo.nickName}}">
+      <button class='btn' size='mini' open-type='getUserInfo' bindgetuserinfo='getUserInfo'>获取昵称头像</button>
+    </block>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
   </view>
-  <view class='item'>
-    <label class='item__label'>调休天数：</label>
-    <text class='item__text'>{{personal.leave_in_lieu}}</text>
-  </view>
-  <view class='item'>
-    <label class='item__label'>请假天数：</label>
-    <text class='item__text'>{{personal.leave}}</text>
-  </view>
-  <view class='item'>
-    <label class='item__label'>剩余可调天数：</label>
-    <text class='item__text'>{{personal.overage}}</text>
+  <view class='content'>
+    <view class='item'>
+      <label class='item__label'>加班天数：</label>
+      <text class='item__text'>{{personal.overtime}}</text>
+    </view>
+    <view class='item'>
+      <label class='item__label'>调休天数：</label>
+      <text class='item__text'>{{personal.leave_in_lieu}}</text>
+    </view>
+    <view class='item'>
+      <label class='item__label'>请假天数：</label>
+      <text class='item__text'>{{personal.leave}}</text>
+    </view>
+    <view class='item'>
+      <label class='item__label'>剩余可调天数：</label>
+      <text class='item__text'>{{personal.overage}}</text>
+    </view>
   </view>
 </view>
