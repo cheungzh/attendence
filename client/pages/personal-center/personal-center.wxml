@@ -1,7 +1,9 @@
 <view class='personal-center'>
   <view class="userinfo">
     <block wx:if="{{!userInfo.nickName}}">
-      <button class='btn' size='mini' open-type='getUserInfo' bindgetuserinfo='getUserInfo'>获取昵称头像</button>
+      <view style='margin-left: 18px;'>
+        <button class='btn' size='mini' open-type='getUserInfo' bindgetuserinfo='getUserInfo'>获取昵称头像</button>
+      </view>
     </block>
     <block wx:else>
       <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>

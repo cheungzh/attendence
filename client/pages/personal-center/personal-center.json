@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "permission": {
+    "scope.userInfo": {
+      "desc": "你的昵称头像将用于用户信息展示"
+    }
+  }
 }

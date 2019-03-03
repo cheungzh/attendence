@@ -35,7 +35,6 @@
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "考勤",
     "backgroundColor": "#eeeeee",
-    "backgroundTextStyle": "light",
-    "enablePullDownRefresh": true
+    "backgroundTextStyle": "light"
   }
 }
