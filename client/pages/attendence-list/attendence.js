@@ -51,5 +51,6 @@ Page({
   },
   onPullDownRefresh () {
     this.getList()
+    wx.stopPullDownRefresh()
   }
 })
