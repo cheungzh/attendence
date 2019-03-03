@@ -10,11 +10,12 @@ Page({
       type: 2,
       start_time: '',
       end_time: '',
-      day: 1
+      day: ''
     },
     types: [
       '', '调休', '加班', '请假'
     ],
+    errmsg: ''
   },
   getType ({ detail }) {
     const type = this.data.attendence_types[detail.value].value
@@ -37,8 +38,36 @@ Page({
       'attendence_form.day': detail.value
     })
   },
+  getTime (date) {
+    return new Date(date).getTime()
+  },
+  valid () {
+    let { day, start_time, end_time } = this.data.attendence_form
+    let rules = {
+      start_time: '开始时间不能为空',
+      end_time: '结束时间不能为空',
+      day: '请输入正确的时长'
+    }
+    for (let rule in rules) {
+      if (!this.data.attendence_form[rule]) {
+        this.showMsg(rules[rule])
+        return
+      }
+    }
+    if (this.getTime(start_time) > this.getTime(end_time)) {
+      this.showMsg('开始时间不能大于结束时间')
+      return
+    }
+    return true
+  },
+  showMsg (message) {
+    this.setData({
+      errmsg: message
+    })
+    setTimeout(() => { this.setData({ errmsg: '' }) }, 2000)
+  },
   submit () {
-    console.log(this.data.attendence_form)
+    if (!this.valid()) return
     wx.cloud.callFunction({
       name: 'add',
       data: this.data.attendence_form

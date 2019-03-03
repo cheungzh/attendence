@@ -1,5 +1,6 @@
 <view class="attendence-add">
-  <form>
+  <view class="text-danger" wx:if="{{errmsg}}">{{errmsg}}</view>
+  <form class="add-form">
     <form-item label="类型：">
       <picker
           style="width: 100%; padding: 8px 0;"

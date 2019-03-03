@@ -1,9 +1,23 @@
 .attendence-add {
-  padding: 20px;
   font-size: 16px;
+}
+.add-form {
+  display: block;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 .place-holder {
   font-size: 14px;
   color: #ddd;
   display: inline-block;
+}
+.text-danger {
+  width: 100%;
+  padding: 8px;
+  text-align: center;
+  background-color: #fef0f0;
+  color: #f56c6c;
+  border: 1px solid #fef0f0;
+  border-radius: 4px;
+  font-size: 14px;
 }
