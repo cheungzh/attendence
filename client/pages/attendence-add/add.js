@@ -35,7 +35,7 @@ Page({
   },
   getDay ({ detail }) {
     this.setData({
-      'attendence_form.day': parseFloat(detail.value)
+      'attendence_form.day': detail.value
     })
   },
   getTime (date) {
@@ -68,10 +68,20 @@ Page({
   },
   submit () {
     if (!this.valid()) return
+    let { attendence_form } = this.data
+    attendence_form.day = parseFloat(attendence_form.day)
     wx.cloud.callFunction({
       name: 'add',
-      data: this.data.attendence_form
+      data: attendence_form
     }).then(res => {
+      this.setData({
+        attendence_form: {
+          type: 2,
+          start_time: '',
+          end_time: '',
+          day: ''
+        }
+      })
       wx.showToast({
         title: '新增成功',
         success: function () {
@@ -79,7 +89,7 @@ Page({
             wx.switchTab({
               url: '/pages/attendence-list/attendence'
             })
-          }, 1000)
+          }, 200)
         }
       })
     })

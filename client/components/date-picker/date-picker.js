@@ -15,6 +15,10 @@ Component({
     field: {
       type: String,
       value: 'day'
+    },
+    date: {
+      type: String,
+      value: ''
     }
   },
 
@@ -31,9 +35,9 @@ Component({
   methods: {
     pick ({ detail }) {
       let { value } = detail;
-      this.setData({
-        val: value
-      })
+      // this.setData({
+      //   val: value
+      // })
       this.triggerEvent('pick', { value })
     }
   }

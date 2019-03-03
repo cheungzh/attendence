@@ -11,10 +11,10 @@
         >{{types[attendence_form.type]}}</picker>
     </form-item>
     <form-item label="开始时间：">
-      <date-picker placeholder="请选择开始时间" bind:pick="getStart"></date-picker>
+      <date-picker placeholder="请选择开始时间" bind:pick="getStart" date="{{attendence_form.start_time}}"></date-picker>
     </form-item>
     <form-item label="结束时间：">
-      <date-picker placeholder="请选择结束时间" bind:pick="getEnd"></date-picker>
+      <date-picker placeholder="请选择结束时间" bind:pick="getEnd" date="{{attendence_form.end_time}}"></date-picker>
     </form-item>
     <form-item label="天数：">
       <input type="digit" value="{{attendence_form.day}}" placeholder='请输入时长' bindinput="getDay" style="padding: 8px 0;"></input>

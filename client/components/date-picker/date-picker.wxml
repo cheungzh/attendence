@@ -1,8 +1,9 @@
 <picker
   mode='{{mode}}'
   class='picker'
+  value='{{date}}'
   bindchange='pick'>
-  <text class='picker-holder' wx-if='{{!val}}'>{{placeholder}}</text>
-    {{val}}
+  <text class='picker-holder' wx-if='{{!date}}'>{{placeholder}}</text>
+    {{date}}
   <text class='picker-icon'>></text>
 </picker>
