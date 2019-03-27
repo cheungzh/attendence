@@ -12,6 +12,7 @@ Page({
     wx.cloud.callFunction({
       name: 'getPersonal'
     }).then(res => {
+      console.log(res)
       this.setData({
         personal: res.result.data
       })
@@ -21,9 +22,9 @@ Page({
     this.setData({
       userInfo: detail.userInfo
     })
-    console.log(detail)
   },
   onShow () {
+    this.getPersonDetail()
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {

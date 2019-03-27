@@ -89,7 +89,7 @@ Page({
             wx.switchTab({
               url: '/pages/attendence-list/attendence'
             })
-          }, 200)
+          }, 100)
         }
       })
     })
